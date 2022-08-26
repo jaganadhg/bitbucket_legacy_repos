@@ -1,0 +1,20 @@
+This project is a fork of Christopher Potts happyfuntokenizer.py 
+(http://sentiment.christopherpotts.net/code-data/happyfuntokenizing.py). 
+The code is shared as per the oroginal licence .
+
+USAGE :
+
+from happyfuntokenizer import Tokenizer
+
+tokenizer = Tokenizer(preserve_case=True)
+
+#You can set preserve_case=False for getting lowrcased tokens.
+
+
+your_tweets = ["...",".."]
+
+for tweet in your_tweets:
+	
+	twokenized = tokenizer.tokenize(tweet)
+	
+	print twokenized

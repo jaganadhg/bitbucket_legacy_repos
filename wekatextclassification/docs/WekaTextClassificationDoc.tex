@@ -1,0 +1,75 @@
+\documentclass[a4paper,serif,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+%\usepackage{lipsum}
+\usepackage{makeidx}
+\usepackage{epigraph}
+%\usepackage{ccicons}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[Glenn]{fncychap}
+\usepackage{hyphenat}
+%\fancyfoot[C]{Confidential}
+%\fancyfoot[RO, LE] {\ccbysa}
+%http://texblog.org/2007/11/07/headerfooter-in-latex-with-fancyhdr/
+%http://fedoraproject.org/wiki/Features/TeXLive
+
+
+% Title Page
+\title{Document Classification with Weka Java API}
+\author{Biju B\\ \url{@bijubkbk} \\ Jaganadh G \\ \url{http://jaganadhg.in}}
+\makeindex
+%\index{key}
+\begin{document}
+\maketitle
+\section*{}
+\epigraph{Not stolen by thieves, not seized by kings, not divided amongst brothers, not heavy to carry. The more you spend, the more it flourishes always - The wealth of knowledge is the most important among all kinds of wealth.}{Sanskrit Subhashita} 
+\epigraph{Knowledge makes one prudent, prudence begets worthiness $|$ \\
+Worthiness creates wealth and enrichment, enrichment leads to right conduct, right conduct brings contentment $||$}{Sanskrit Subhashita}
+
+
+\pagebreak
+%\begin{abstract}
+\section*{Preface}
+We were working on Text Mining projects and application development for last seven years. We gained fair hands-on experience in various Text Mining toolkit to meet our professional requirements. Our primary tools were NLTK \footnote{\url{http://nltk.org}} and Apache Mahout \footnote{\url{http://mahout.apache.org}}. One day some interviewer thrown a question to us about comfort level in using Weka Java API. So far we used Weka GUI for some experiments; but not played with the API. We decided to look into the API and build some interesting projects. There was not much tutorials in web which explains end to end game of Document Classification with Weka API; except some in the Weka Wiki. We decided to spent some free time in Weka API exploration. When ever we encountered issues we approached the Weka Mailing list \footnote{\url{https://list.scms.waikato.ac.nz/mailman/listinfo/wekalist}} and Stakoverflow \footnote{\url{http://stackoverflow.com/}} for getting some solutions. People were very generous to give hints 
+and code samples to accelerate our leaning. After attaining some confidence we decided to write this tutorial; which may helpful for people who is like us. In this tutorial we are trying to give illustrative examples for Document Classification with Weka Java API and different algorithms. 
+
+We welcomes your comments, suggestions, corrections, criticism, enhancement etc.. We loves both stones and garlands. Source code for this tutorial including this document is available at our Bitbucket repo \footnote{\url{https://bitbucket.org/jaganadhg/wekatextclassification}}. 
+%\end{abstract}
+\pagebreak 
+
+\section*{Acknowledgments}
+We are thankful to one and all in the Weka Mailing List and Stackoverflow for listening and responding to our stupid questions; especially Mark Hall and David Sharpe in the Weka Mailing List; Sicco, Shadow Wizard, Joachim Sauer and joxxe in Stackoverflow. We are thankful to the University of Waikato, Weka developers, contributors and document writers. We express our sincere thanks to people who put some code sample in internet (We forgot to bookmark you). 
+
+
+We express our special tanks to Abhishek S our good friend who spent some time in giving an online intro to Weka API and sharing his experience.  We are thankful to @chelakkandupoda, Sreejith S and Asha Binu for going through the tutorial, trying it out, and giving suggestions.
+
+
+We took the English translation of Sanskrit Subhashita from \url{http://sanskritpearls.blogspot.in/2009/12/december-2nd.html} and \url{http://baawara.blogspot.in/2010/05/vidya-dadati-vinayam-gyan-from-past.html}
+
+
+We dedicate this tutorial to our families who always support our learning expeditions. 
+
+\pagebreak 
+\tableofcontents
+\chapter{Introduction}
+
+\section{Weka}
+Weka \index{Weka} \footnote{\url{http://www.cs.waikato.ac.nz/ml/weka/}} is a popular Machine Learning \index{Machine Learning} suite developed by University of Waikato. \index{University of Waikato} Weka \index{Weka} is Free Software \index{Free Software} available under GNU General Public License. \index{GNU General Public Licence} It is written in Java \index{Java}. Weka comes with a Graphical User Interface (GUI). \index{GUI} Weka comes witha collection of tools and algorithms for different data mining tasks. It supports data preprocessing,\index{data preprocessing} clustering,\index{clustering} classification,\index{classification} regression,\index{regression} visualization,\index{visualization} and feature selection. \index{feature selection} Weka provides access to SQL \index{SQL} databases using Java Database Connectivity \index{Java Database Connectivity} and can process the result returned by a database query.Weka's main user interface is the Explorer, but essentially the same functionality can be accessed through the component-based Knowledge Flow interface and from the command line. There is also the Experimenter, which allows the systematic comparison of the predictive performance of Weka's machine learning algorithms on a collection of datasets. For a detailed view on Weka features etc.. visit Weka web page. 
+\\
+
+The development of Weka started in 1993 at University of Waikato. In 1997 they started porting the TCL/TK \index{TCL/TK} based Weka to Java. \marginpar{History} Weka recieved SIGKDD Data Mining and Knowledge Discovery Service Award in the year 2005. Bussiness Intelliegence \index{Bussiness Intelliegence} companies like Pentaho \footnote{\url{www.pentaho.com/}} uses Weka in their applications. 
+
+\subsection{Installation}
+Weka \index{Weka} 3.6 is the latest stable version of Weka. You can download Weka from \url{http://www.cs.waikato.ac.nz/ml/weka/index_downloading.html}. You can select aproproate version based on your operating system. Most of the popular GNU/Linux \index{GNU/Linux} distributions include Weka in their repository. If you are using any GNU/Linux systems you can install Weka using the package manager like yum or apt. Since this tutoril aims at develpers we are nor providing detailed installation instructions. 
+
+
+
+\chapter{Trainer}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%\lipsum
+\printindex
+\end{document}          
