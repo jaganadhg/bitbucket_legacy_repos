@@ -1,0 +1,38 @@
+#from setuptools import setup
+from distutils.core import setup
+
+long_description = """This is a small python library to generate Unigram or Bigram or Trigram from an Indic Language text.
+The text should be in unicode format.
+Usage:
+from indicngramlib import *
+indng = indicNgram()
+indng.unigram(<your_file>)
+indng.printUnifreq()
+For more details refer:
+
+"""
+setup(
+	name='indicngramlib',
+	version='1.0',
+	author='Jaganadh G',
+	author_email='jaganadhg@gmail.com',
+	description='ngram library for Indic Unicode text',
+	long_description=long_description,
+	keywords="pypi console tools",
+	classifiers= [
+		'Development Status :: 4 - Beta',
+		'Environment :: Console',
+		'Intended Audiance :: End Users/Desktop',
+		'License :: OSI Approved :: GNU General Public Licence(GPL)',
+		'Operating System :: OS Independent',
+		'Programming Language :: Python',
+		'Topic :: Utilities'
+		],
+	url='http://jaganadhg.freeflux.net/blog',
+	license='GPLv3',
+	scripts=['indicngramlib.py'],
+	package_data={
+		'': ['*.txt']
+	},
+
+	)

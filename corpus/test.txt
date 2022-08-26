@@ -1,0 +1,42 @@
+﻿Syntactical Parser for Malayalam
+
+Definitions 
+Syntax - In linguistics, syntax is the study of the principles and rules for constructing sentences in natural languages.
+Parser - In computer science and linguistics, parsing, or syntactic analysis, is the process of analysing a text, made of a sequence of tokens (, to determine its grammatical structure with respect to a given formal grammar.
+
+Introduction 
+Syntactical parser is an essential component of Natural Language Processing tools like Machine Translation Systems, Message Understanding Systems, Grammar Checker etc.. The development of a syntactical parser for any Natural Language involves two tasks. 1) Understanding of syntactical structures in the language. 2) Development of a computational grammar . What is the function of a parser? A parser  takes natural language sentence as input and produces syntactical structure as output. 
+E.g.
+	Input - <s> ദാമു വിദ്യാലയത്തിലേക്ക് പോകുന്നു. </s>
+	Output - (S(NP (ദാമു NNP)) (VP (NP (വിദ്യാലയത്തിലേക്ക് NNP)) (പോകുന്നു VBG)) (. .))
+
+From the given example it is clear that a parser will identify the phrases in a given structure. For this a parser utilises a set of rules in the form of Chomskian Normal Form (CNF) or Backus Nur Form (BNF).
+
+	E.g.
+		S --> NP VP
+		NP --> Determinar (zero or more) + Adjectuve (zero or more) + Noun  (one or more)
+		VP --> Verb + NP
+
+A general architecture of the parser system is 
+
+	--> ||Morph Analyzer || --> ||POS Tagger|| --> || Phrase Structure Identification || --> output.
+
+A morph analyser will identify the morphological structure of a give natural language word. 
+	
+		E.g. 
+		വിദ്യാലയത്തിലേക്ക്  --> വിദ്യാലയം + LOC (Locative CASE)+ SING (Singular)
+
+POS Tagger will identify the POS Tag for the given word based on the morph output and context.
+		
+		E.g വിദ്യാലയത്തിലേക്ക്	-- > NN-loc ( Noun locative)
+
+The parse structure identifier will identify phrases (NP, VP) based on the CNF/BNF rules and it will produce the output. 
+The most challenging task in a parser development is to identify exact parse structure for a given sentence. For example the sentence "I saw a man with a telescope." is a syntactical ambiguous one [Who is holding the telescope? I or the man]. Extensive knowledge base on the syntactical structure and syntactical phenomena involved in the language is required for development of the system. There is no syntactical parsers for the language Malayalam. So it is the first attempt develop such a system. It will be a useful component for Indian Language to Indian Language Machine Translation System.
+
+
+Application of Parser.
+1) Machine Translation 
+2) Grammar Checker
+3) Speech Systems 
+			
+		

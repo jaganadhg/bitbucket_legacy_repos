@@ -1,0 +1,35 @@
+from nltk import word_tokenize
+from nltk.stem.wordnet import WordNetLemmatizer
+import nltk
+lemmatizer = WordNetLemmatizer()
+lemmatize = lambda word: lemmatizer.lemmatize(word.lower())
+def get_words(pub):
+    for line in open('data/%s.txt' % pub):
+        for word in word_tokenize(line):
+            yield word
+def word_features(pub):
+    words = get_words(pub)
+    return {"contains(%s)" % lemmatize(word): True
+                for word in words}
+bloomberg = [(word_features("bloomberg"), "Bloomberg")]
+apttherapy = [(word_features("popsugar"), "Apartment Therapy")]
+feature_set = bloomberg + apttherapy
+classifier = nltk.NaiveBayesClassifier.train(feature_set)
+
+
+from nltk.collocations import TrigramCollocationFinder
+from nltk.metrics import TrigramAssocMeasures
+from nltk.corpus import webtext
+from nltk.corpus import stopwords
+stop_set = set(stopwords.words('english'))
+stops_filter = lambda w: len(w) < 3 or w in stop_set
+words = [word.lower()
+            for word in webtext.words('singles.txt')]
+tcf = TrigramCollocationFinder.from_words(words)
+tcf.apply_word_filter(stops_filter)
+tcf.apply_freq_filter(2)
+tcf.nbest(TrigramAssocMeasures.likelihood_ratio, 4)
+
+
+
+

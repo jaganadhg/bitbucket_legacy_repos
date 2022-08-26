@@ -1,0 +1,10 @@
+Thank you for downloading the indicngramlib
+Please feel free to provide your valuable feedback to jaganadhg@gmail.com
+
+To install it run
+
+python setup.py install
+
+That's all!!
+
+In case of any difficulty in installation please write to jaganadhg@gmail.com
